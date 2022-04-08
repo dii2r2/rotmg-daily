@@ -64,16 +64,16 @@ const rotmgDailyQuests = [
     title: "Scout Quests",
     quests: [
       {
-        title: "Scout the Pit",
+        title: "Scout the Theatre",
         needed: [
           {
-            file: snake_pit,
+            file: puppet_theatre,
             amount: 1,
           },
         ],
         rewards: [
           {
-            file: speed,
+            file: attack,
             amount: 2,
           },
         ],
@@ -94,16 +94,16 @@ const rotmgDailyQuests = [
         ],
       },
       {
-        title: "Scout the Abyss",
+        title: "Scout the Pit",
         needed: [
           {
-            file: abyss_of_demons,
+            file: snake_pit,
             amount: 1,
           },
         ],
         rewards: [
           {
-            file: vitality,
+            file: speed,
             amount: 2,
           },
         ],
@@ -124,6 +124,21 @@ const rotmgDailyQuests = [
         ],
       },
       {
+        title: "Scout the Abyss",
+        needed: [
+          {
+            file: abyss_of_demons,
+            amount: 1,
+          },
+        ],
+        rewards: [
+          {
+            file: vitality,
+            amount: 2,
+          },
+        ],
+      },
+      {
         title: "Scout the Lair",
         needed: [
           {
@@ -134,21 +149,6 @@ const rotmgDailyQuests = [
         rewards: [
           {
             file: wisdom,
-            amount: 2,
-          },
-        ],
-      },
-      {
-        title: "Scout the Theatre",
-        needed: [
-          {
-            file: puppet_theatre,
-            amount: 1,
-          },
-        ],
-        rewards: [
-          {
-            file: attack,
             amount: 2,
           },
         ],
@@ -227,36 +227,6 @@ const rotmgDailyQuests = [
         ],
       },
       {
-        title: "The Titan",
-        needed: [
-          {
-            file: ancient_ruins,
-            amount: 6,
-          },
-        ],
-        rewards: [
-          {
-            file: standard_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "The Ghost God",
-        needed: [
-          {
-            file: undead_lair,
-            amount: 8,
-          },
-        ],
-        rewards: [
-          {
-            file: standard_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
         title: "The Archdemon",
         needed: [
           {
@@ -272,101 +242,11 @@ const rotmgDailyQuests = [
         ],
       },
       {
-        title: "The Slime God",
+        title: "The Ghost God",
         needed: [
           {
-            file: toxic_sewers,
-            amount: 6,
-          },
-        ],
-        rewards: [
-          {
-            file: standard_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "The Puppet Master",
-        needed: [
-          {
-            file: puppet_theatre,
-            amount: 6,
-          },
-        ],
-        rewards: [
-          {
-            file: standard_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "The Fountain Spirit",
-        needed: [
-          {
-            file: magic_woods,
-            amount: 5,
-          },
-        ],
-        rewards: [
-          {
-            file: standard_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "The Archivist",
-        needed: [
-          {
-            file: cursed_library,
-            amount: 5,
-          },
-        ],
-        rewards: [
-          {
-            file: standard_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "The Apparition",
-        needed: [
-          {
-            file: haunted_cemetery,
-            amount: 3,
-          },
-        ],
-        rewards: [
-          {
-            file: standard_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "The Vampire Lord",
-        needed: [
-          {
-            file: manor,
-            amount: 4,
-          },
-        ],
-        rewards: [
-          {
-            file: standard_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "The Mad Scientist",
-        needed: [
-          {
-            file: mad_lab,
-            amount: 4,
+            file: undead_lair,
+            amount: 8,
           },
         ],
         rewards: [
@@ -416,19 +296,41 @@ const rotmgDailyQuests = [
         ],
       },
       {
-        title: "Smite the Undead!",
+        title: "The Puppet Master",
         needed: [
           {
-            file: undead_lair,
-            amount: 2,
+            file: puppet_theatre,
+            amount: 6,
           },
+        ],
+        rewards: [
           {
-            file: haunted_cemetery,
-            amount: 2,
+            file: standard_chest,
+            amount: 1,
           },
+        ],
+      },
+      {
+        title: "The Slime God",
+        needed: [
           {
-            file: manor,
-            amount: 2,
+            file: toxic_sewers,
+            amount: 6,
+          },
+        ],
+        rewards: [
+          {
+            file: standard_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "The Titan",
+        needed: [
+          {
+            file: ancient_ruins,
+            amount: 6,
           },
         ],
         rewards: [
@@ -458,6 +360,52 @@ const rotmgDailyQuests = [
         ],
       },
       {
+        title: "Dimensional Foes",
+        needed: [
+          {
+            file: sprite_world,
+            amount: 4,
+          },
+          {
+            file: third_dimension,
+            amount: 2,
+          },
+        ],
+        rewards: [
+          {
+            file: standard_chest,
+            amount: 1,
+          },
+          {
+            file: cubic_jelly,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "Smite the Undead!",
+        needed: [
+          {
+            file: undead_lair,
+            amount: 2,
+          },
+          {
+            file: haunted_cemetery,
+            amount: 2,
+          },
+          {
+            file: manor,
+            amount: 2,
+          },
+        ],
+        rewards: [
+          {
+            file: standard_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
         title: "Blessings and Curses",
         needed: [
           {
@@ -477,6 +425,36 @@ const rotmgDailyQuests = [
         ],
       },
       {
+        title: "The Fountain Spirit",
+        needed: [
+          {
+            file: magic_woods,
+            amount: 5,
+          },
+        ],
+        rewards: [
+          {
+            file: standard_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "The Archivist",
+        needed: [
+          {
+            file: cursed_library,
+            amount: 5,
+          },
+        ],
+        rewards: [
+          {
+            file: standard_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
         title: "Demonhunter",
         needed: [
           {
@@ -485,6 +463,55 @@ const rotmgDailyQuests = [
           },
           {
             file: mountain_temple,
+            amount: 2,
+          },
+        ],
+        rewards: [
+          {
+            file: standard_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "The Vampire Lord",
+        needed: [
+          {
+            file: manor,
+            amount: 4,
+          },
+        ],
+        rewards: [
+          {
+            file: standard_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "The Mad Scientist",
+        needed: [
+          {
+            file: mad_lab,
+            amount: 4,
+          },
+        ],
+        rewards: [
+          {
+            file: standard_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "The Cost of Wisdom",
+        needed: [
+          {
+            file: mad_lab,
+            amount: 2,
+          },
+          {
+            file: cursed_library,
             amount: 2,
           },
         ],
@@ -550,43 +577,16 @@ const rotmgDailyQuests = [
         ],
       },
       {
-        title: "The Cost of Wisdom",
+        title: "The Apparition",
         needed: [
           {
-            file: mad_lab,
-            amount: 2,
-          },
-          {
-            file: cursed_library,
-            amount: 2,
+            file: haunted_cemetery,
+            amount: 3,
           },
         ],
         rewards: [
           {
             file: standard_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "Dimensional Foes",
-        needed: [
-          {
-            file: sprite_world,
-            amount: 4,
-          },
-          {
-            file: third_dimension,
-            amount: 2,
-          },
-        ],
-        rewards: [
-          {
-            file: standard_chest,
-            amount: 1,
-          },
-          {
-            file: cubic_jelly,
             amount: 1,
           },
         ],
@@ -597,10 +597,60 @@ const rotmgDailyQuests = [
     title: "Mighty Quests",
     quests: [
       {
-        title: "The Effigy",
+        title: "Epic Showdown",
         needed: [
           {
-            file: effigy,
+            file: deadwater_docks,
+            amount: 2,
+          },
+          {
+            file: crawling_depths,
+            amount: 2,
+          },
+          {
+            file: woodland_labyrinth,
+            amount: 2,
+          },
+        ],
+        rewards: [
+          {
+            file: mighty_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "Double Trouble",
+        needed: [
+          {
+            file: oryx,
+            amount: 3,
+          },
+          {
+            file: janus,
+            amount: 3,
+          },
+        ],
+        rewards: [
+          {
+            file: mighty_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "Exterminate!",
+        needed: [
+          {
+            file: crawling_depths,
+            amount: 2,
+          },
+          {
+            file: woodland_labyrinth,
+            amount: 2,
+          },
+          {
+            file: nest,
             amount: 1,
           },
         ],
@@ -609,21 +659,43 @@ const rotmgDailyQuests = [
             file: mighty_chest,
             amount: 1,
           },
+        ],
+      },
+      {
+        title: "The Mad God",
+        needed: [
           {
-            file: loot_drop_potion,
-            amount: 1,
+            file: oryx,
+            amount: 4,
           },
+        ],
+        rewards: [
           {
-            file: loot_tier_potion,
+            file: mighty_chest,
             amount: 1,
           },
         ],
       },
       {
-        title: "The New King",
+        title: "The Doorwarden",
         needed: [
           {
-            file: deadwater_docks,
+            file: janus,
+            amount: 4,
+          },
+        ],
+        rewards: [
+          {
+            file: mighty_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "The Prodigal Son",
+        needed: [
+          {
+            file: crawling_depths,
             amount: 4,
           },
         ],
@@ -650,10 +722,10 @@ const rotmgDailyQuests = [
         ],
       },
       {
-        title: "The Prodigal Son",
+        title: "The New King",
         needed: [
           {
-            file: crawling_depths,
+            file: deadwater_docks,
             amount: 4,
           },
         ],
@@ -785,124 +857,6 @@ const rotmgDailyQuests = [
         ],
       },
       {
-        title: "The Mad God",
-        needed: [
-          {
-            file: oryx,
-            amount: 4,
-          },
-        ],
-        rewards: [
-          {
-            file: mighty_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "The Doorwarden",
-        needed: [
-          {
-            file: janus,
-            amount: 4,
-          },
-        ],
-        rewards: [
-          {
-            file: mighty_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "Double Trouble",
-        needed: [
-          {
-            file: oryx,
-            amount: 3,
-          },
-          {
-            file: janus,
-            amount: 3,
-          },
-        ],
-        rewards: [
-          {
-            file: mighty_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "Epic Showdown",
-        needed: [
-          {
-            file: deadwater_docks,
-            amount: 2,
-          },
-          {
-            file: crawling_depths,
-            amount: 2,
-          },
-          {
-            file: woodland_labyrinth,
-            amount: 2,
-          },
-        ],
-        rewards: [
-          {
-            file: mighty_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "Exterminate!",
-        needed: [
-          {
-            file: crawling_depths,
-            amount: 2,
-          },
-          {
-            file: woodland_labyrinth,
-            amount: 2,
-          },
-          {
-            file: nest,
-            amount: 1,
-          },
-        ],
-        rewards: [
-          {
-            file: mighty_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "Unsettling Foes",
-        needed: [
-          {
-            file: parasite_chambers,
-            amount: 2,
-          },
-          {
-            file: ice_cave,
-            amount: 1,
-          },
-          {
-            file: davy_jones_locker,
-            amount: 1,
-          },
-        ],
-        rewards: [
-          {
-            file: mighty_chest,
-            amount: 1,
-          },
-        ],
-      },
-      {
         title: "Long Forgotten",
         needed: [
           {
@@ -941,6 +895,52 @@ const rotmgDailyQuests = [
         ],
       },
       {
+        title: "Ocean Man",
+        needed: [
+          {
+            file: ocean_trench,
+            amount: 2,
+          },
+          {
+            file: davy_jones_locker,
+            amount: 1,
+          },
+          {
+            file: deadwater_docks,
+            amount: 1,
+          },
+        ],
+        rewards: [
+          {
+            file: mighty_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "Unsettling Foes",
+        needed: [
+          {
+            file: parasite_chambers,
+            amount: 2,
+          },
+          {
+            file: ice_cave,
+            amount: 1,
+          },
+          {
+            file: davy_jones_locker,
+            amount: 1,
+          },
+        ],
+        rewards: [
+          {
+            file: mighty_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
         title: "Lost and Found",
         needed: [
           {
@@ -968,24 +968,24 @@ const rotmgDailyQuests = [
         ],
       },
       {
-        title: "Ocean Man",
+        title: "The Effigy",
         needed: [
           {
-            file: ocean_trench,
-            amount: 2,
-          },
-          {
-            file: davy_jones_locker,
-            amount: 1,
-          },
-          {
-            file: deadwater_docks,
+            file: effigy,
             amount: 1,
           },
         ],
         rewards: [
           {
             file: mighty_chest,
+            amount: 1,
+          },
+          {
+            file: loot_drop_potion,
+            amount: 1,
+          },
+          {
+            file: loot_tier_potion,
             amount: 1,
           },
         ],
@@ -996,35 +996,20 @@ const rotmgDailyQuests = [
     title: "Epic Quests",
     quests: [
       {
-        title: "The Killer Queen",
+        title: "Havoc in the Halls",
         needed: [
           {
-            file: nest,
-            amount: 3,
+            file: lost_halls,
+            amount: 2,
+          },
+          {
+            file: cultist_hideout,
+            amount: 2,
           },
         ],
         rewards: [
           {
-            file: honeyed_epic_chest,
-            amount: 1,
-          },
-          {
-            file: lucky_clover,
-            amount: 1,
-          },
-        ],
-      },
-      {
-        title: "The King",
-        needed: [
-          {
-            file: shatters,
-            amount: 3,
-          },
-        ],
-        rewards: [
-          {
-            file: royal_epic_chest,
+            file: voided_epic_chest,
             amount: 1,
           },
           {
@@ -1091,6 +1076,25 @@ const rotmgDailyQuests = [
         ],
       },
       {
+        title: "The King",
+        needed: [
+          {
+            file: shatters,
+            amount: 3,
+          },
+        ],
+        rewards: [
+          {
+            file: royal_epic_chest,
+            amount: 1,
+          },
+          {
+            file: lucky_clover,
+            amount: 1,
+          },
+        ],
+      },
+      {
         title: "The Crystal",
         needed: [
           {
@@ -1110,20 +1114,16 @@ const rotmgDailyQuests = [
         ],
       },
       {
-        title: "Havoc in the Halls",
+        title: "The Killer Queen",
         needed: [
           {
-            file: lost_halls,
-            amount: 2,
-          },
-          {
-            file: cultist_hideout,
-            amount: 2,
+            file: nest,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: voided_epic_chest,
+            file: honeyed_epic_chest,
             amount: 1,
           },
           {
@@ -1157,14 +1157,16 @@ const plans = [
   },
 ];
 export default function Home(props) {
-  let c = props.cookies.dailyQuests || "{}"
+  let c = props.cookies.dailyQuests || "{}";
   c = JSON.parse(c);
   const [quests, setQuests] = useState(c);
 
   return (
-    <div className="grid grid-cols-1 h-screen place-content-start">
+    <div className="grid grid-cols-1 h-screen place-content-start bg-light_misty_blue">
       <nav className="p-6 bg-charcoal text-light_misty_blue">
-        <div className="float-left text-2xl text-light_misty_blue">Daily RotMG Tracker</div>
+        <div className="float-left text-2xl text-light_misty_blue">
+          Daily RotMG Tracker
+        </div>
         <div className="float-right"></div>
       </nav>
       <Tab.Group>
@@ -1176,7 +1178,8 @@ export default function Home(props) {
                   className={
                     (selected
                       ? "bg-charcoal text-misty_blue"
-                      : "bg-cornflower text-misty_blue") + " text-center py-4 text-2xl"
+                      : "bg-cornflower text-misty_blue") +
+                    " text-center py-4 text-2xl"
                   }
                 >
                   Quest List
@@ -1191,7 +1194,8 @@ export default function Home(props) {
                   className={
                     (selected
                       ? "bg-charcoal text-misty_blue"
-                      : "bg-cornflower text-misty_blue") + " text-center py-4 text-2xl"
+                      : "bg-cornflower text-misty_blue") +
+                    " text-center py-4 text-2xl"
                   }
                 >
                   Active Quests
@@ -1203,12 +1207,14 @@ export default function Home(props) {
         <Tab.Panels className="flex flex-col h-max bg-light_misty_blue">
           <Tab.Panel className="flex">
             {rotmgDailyQuests.map((d, i) => (
-              <div 
-                className={`${i===3 ? 'mx-2' : 'ml-2'} basis-1/4`}
+              <div
+                className={`${i === 3 ? "mx-2" : "ml-2"} basis-1/4`}
                 key={d.title}
               >
                 <div>
-                  <h2 className="text-xl text-center py-2 bg-blue_gray text-light_misty_blue mb-2 shadow-lg rounded-b-md">{d.title}</h2>
+                  <h2 className="text-xl text-center py-2 bg-blue_gray text-light_misty_blue mb-2 shadow-lg rounded-b-md">
+                    {d.title}
+                  </h2>
                 </div>
                 <RadioGroup
                   onChange={(e) => {
@@ -1219,12 +1225,12 @@ export default function Home(props) {
                     <RadioGroup.Option
                       key={q.title}
                       value={q}
-                      className={
-                        `${
-                          quests[d.title]?.includes(q.title) ? 'bg-sky-900 bg-opacity-75 text-white' : ''
-                        }
-                          relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none my-2 bg-misty_blue`
-                        }
+                      className={`${
+                        quests[d.title]?.includes(q.title)
+                          ? "bg-sky-900 bg-opacity-75 text-white"
+                          : ""
+                      }
+                          relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none my-2`}
                     >
                       <div className="flex items-center justify-between w-full">
                         <div className="w-full">
@@ -1232,7 +1238,9 @@ export default function Home(props) {
                             <RadioGroup.Label
                               as="p"
                               className={`font-medium  ${
-                                quests[d.title]?.includes(q.title) ? 'text-white' : 'text-gray-900'
+                                quests[d.title]?.includes(q.title)
+                                  ? "text-white"
+                                  : "text-gray-900"
                               }`}
                             >
                               {q.title}
@@ -1240,7 +1248,9 @@ export default function Home(props) {
                             <RadioGroup.Description
                               as="span"
                               className={`inline ${
-                                quests[d.title]?.includes(q.title) ? 'text-sky-100' : 'text-gray-500'
+                                quests[d.title]?.includes(q.title)
+                                  ? "text-sky-100"
+                                  : "text-gray-500"
                               }`}
                             >
                               <div className="py-2 w-full items-center">
@@ -1248,13 +1258,13 @@ export default function Home(props) {
                                   {q.needed.map((n) => {
                                     return [...Array(n.amount)].map((e, i) => {
                                       return (
-                                          <Image
-                                            key={i}
-                                            height={28}
-                                            width={28}
-                                            src={n.file}
-                                            alt=""
-                                          />
+                                        <Image
+                                          key={i}
+                                          height={28}
+                                          width={28}
+                                          src={n.file}
+                                          alt=""
+                                        />
                                       );
                                     });
                                   })}
@@ -1273,11 +1283,11 @@ export default function Home(props) {
                                       );
                                     });
                                   })}
-                                {quests[d.title]?.includes(q.title) && (
-                                  <div className="text-white float-right ml-2">
-                                    <CheckIcon className="w-7 h-7" />
-                                  </div>
-                                )}
+                                  {quests[d.title]?.includes(q.title) && (
+                                    <div className="text-white float-right ml-2">
+                                      <CheckIcon className="w-7 h-7" />
+                                    </div>
+                                  )}
                                 </div>
                               </div>
                             </RadioGroup.Description>
@@ -1290,7 +1300,95 @@ export default function Home(props) {
               </div>
             ))}
           </Tab.Panel>
-          <Tab.Panel>Coming Soon</Tab.Panel>
+          <Tab.Panel className="flex">
+          {rotmgDailyQuests.map((d, i) => (
+            ( quests[d.title]!==undefined && (
+              <div
+                key={d.title}
+                className={`${i === 3 ? "mx-2" : "ml-2"} basis-1/4`}
+              >
+                <div>
+                  <h2 className="text-xl text-center py-2 bg-blue_gray text-light_misty_blue mb-2 shadow-lg rounded-b-md">
+                    {d.title}
+                  </h2>
+                </div>
+                <div>
+                  {d.quests.map((q) => (
+                    quests[d.title]?.includes(q.title) && (
+                      <div
+                        key={q.title}
+                        className={`${
+                          quests[d.title]?.includes(q.title)
+                            ? "bg-sky-900 bg-opacity-75 text-white"
+                            : ""
+                        }
+                            relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none my-2`}
+                      >
+                        <div className="flex items-center justify-between w-full">
+                          <div className="w-full">
+                            <div className="text-sm">
+                              <p
+                                as="p"
+                                className={`font-medium  ${
+                                  quests[d.title]?.includes(q.title)
+                                    ? "text-white"
+                                    : "text-gray-900"
+                                }`}
+                              >
+                                {q.title}
+                              </p>
+                              <span
+                                as="span"
+                                className={`inline ${
+                                  quests[d.title]?.includes(q.title)
+                                    ? "text-sky-100"
+                                    : "text-gray-500"
+                                }`}
+                              >
+                                <div className="py-2 w-full items-center">
+                                  <div className="float-left">
+                                    {q.needed.map((n) => {
+                                      return [...Array(n.amount)].map((e, i) => {
+                                        return (
+                                          <Image
+                                            key={i}
+                                            height={28}
+                                            width={28}
+                                            src={n.file}
+                                            alt=""
+                                          />
+                                        );
+                                      });
+                                    })}
+                                  </div>
+                                  <div className="float-right">
+                                    {q.rewards.map((n) => {
+                                      return [...Array(n.amount)].map((e, i) => {
+                                        return (
+                                          <Image
+                                            key={i}
+                                            height={28}
+                                            width={28}
+                                            src={n.file}
+                                            alt=""
+                                          />
+                                        );
+                                      });
+                                    })}
+                                  </div>
+                                </div>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  ))}
+                </div>
+              </div>
+            ))
+            ))}
+          </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </div>
@@ -1312,31 +1410,48 @@ function CheckIcon(props) {
   );
 }
 
+function timeRemaining() {
+  let now = new Date();
+  let hours = now.getUTCHours();
+  let minutes = now.getUTCMinutes();
+  let seconds = now.getUTCSeconds();
+  let remainingSeconds = hours * 60 * 60 + minutes * 60 + seconds;
+  let frac = (86400 - remainingSeconds) / 86400;
+  return frac;
+}
+
 function setCookieQuest(e, cookies, title, setQuests) {
+  let frac = timeRemaining();
   let dailyQuests = cookies.get("dailyQuests");
   if (dailyQuests === undefined) {
     dailyQuests = {};
     dailyQuests[title] = [e.title];
-    cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+    cookies.set("dailyQuests", JSON.stringify(dailyQuests), { expires: frac });
     setQuests(dailyQuests);
   } else {
     dailyQuests = JSON.parse(dailyQuests);
     switch (title) {
       case "Scout Quests":
         dailyQuests[title] = [e.title];
-        cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+        cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
+          expires: frac,
+        });
         setQuests(dailyQuests);
         break;
       case "Standard Quests":
         if (dailyQuests[title] === undefined) {
           dailyQuests[title] = [e.title];
-          cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+          cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
+            expires: frac,
+          });
           setQuests(dailyQuests);
         } else if (dailyQuests[title].length <= 2) {
           for (let i = 0; i < dailyQuests[title].length; i++) {
             if (dailyQuests[title][i] === e.title) {
               dailyQuests[title].splice(i, 1);
-              cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+              cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
+                expires: frac,
+              });
               setQuests(dailyQuests);
               return;
             }
@@ -1345,7 +1460,9 @@ function setCookieQuest(e, cookies, title, setQuests) {
             dailyQuests[title].shift();
           }
           dailyQuests[title].push(e.title);
-          cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+          cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
+            expires: frac,
+          });
           setQuests(dailyQuests);
           return;
         }
@@ -1353,13 +1470,17 @@ function setCookieQuest(e, cookies, title, setQuests) {
       case "Mighty Quests":
         if (dailyQuests[title] === undefined) {
           dailyQuests[title] = [e.title];
-          cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+          cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
+            expires: frac,
+          });
           setQuests(dailyQuests);
         } else if (dailyQuests[title].length <= 2) {
           for (let i = 0; i < dailyQuests[title].length; i++) {
             if (dailyQuests[title][i] === e.title) {
               dailyQuests[title].splice(i, 1);
-              cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+              cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
+                expires: frac,
+              });
               setQuests(dailyQuests);
               return;
             }
@@ -1368,14 +1489,18 @@ function setCookieQuest(e, cookies, title, setQuests) {
             dailyQuests[title].shift();
           }
           dailyQuests[title].push(e.title);
-          cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+          cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
+            expires: frac,
+          });
           setQuests(dailyQuests);
           return;
         }
         break;
       case "Epic Quests":
         dailyQuests[title] = [e.title];
-        cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+        cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
+          expires: frac,
+        });
         setQuests(dailyQuests);
         break;
     }
