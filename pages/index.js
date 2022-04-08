@@ -1432,7 +1432,11 @@ function setCookieQuest(e, cookies, title, setQuests) {
     dailyQuests = JSON.parse(dailyQuests);
     switch (title) {
       case "Scout Quests":
-        dailyQuests[title] = [e.title];
+        if(dailyQuests[title]?.includes(e.title)) {
+          dailyQuests[title] = []
+        } else {
+          dailyQuests[title] = [e.title];
+        }
         cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
           expires: frac,
         });
@@ -1497,7 +1501,11 @@ function setCookieQuest(e, cookies, title, setQuests) {
         }
         break;
       case "Epic Quests":
-        dailyQuests[title] = [e.title];
+        if(dailyQuests[title]?.includes(e.title)) {
+          dailyQuests[title] = []
+        } else {
+          dailyQuests[title] = [e.title];
+        }
         cookies.set("dailyQuests", JSON.stringify(dailyQuests), {
           expires: frac,
         });
