@@ -1163,6 +1163,10 @@ export default function Home(props) {
 
   return (
     <div className="grid grid-cols-1 h-screen place-content-start bg-light_misty_blue">
+      <Head>
+        <title>RotMG Tracker</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <nav className="p-6 bg-charcoal text-light_misty_blue">
         <div className="float-left text-2xl text-light_misty_blue">
           Daily RotMG Tracker
