@@ -1162,71 +1162,54 @@ export default function Home(props) {
   const [quests, setQuests] = useState(c);
 
   return (
-    <div className="grid grid-cols-1 h-screen bg-light_misty_blue place-content-start">
-      <div className="flex">
-        <div className="w-4 h-4 bg-light_misty_blue"></div>
-        <div className="w-4 h-4 bg-misty_blue"></div>
-        <div className="w-4 h-4 bg-cornflower"></div>
-        <div className="w-4 h-4 bg-blue_gray"></div>
-        <div className="w-4 h-4 bg-charcoal"></div>
-      </div>
+    <div className="grid grid-cols-1 h-screen place-content-start">
       <nav className="p-6 bg-charcoal text-light_misty_blue">
-        <div className="float-left">Daily ROTMG Tracker</div>
-        <div className="float-right">Settings</div>
+        <div className="float-left text-2xl text-light_misty_blue">Daily RotMG Tracker</div>
+        <div className="float-right"></div>
       </nav>
       <Tab.Group>
-        <Tab.List className="flex flex-row">
+        <Tab.List className="flex flex-row shadow-lg z-50">
           <Tab as={Fragment}>
             {({ selected }) => (
-              <div className="basis-1/3 cursor-pointer">
+              <div className="basis-1/2 cursor-pointer">
                 <p
                   className={
                     (selected
                       ? "bg-charcoal text-misty_blue"
-                      : "bg-blue_gray text-misty_blue") + " text-center py-4"
+                      : "bg-cornflower text-misty_blue") + " text-center py-4 text-2xl"
                   }
                 >
-                  Tab 1
+                  Quest List
                 </p>
               </div>
             )}
           </Tab>
           <Tab as={Fragment}>
             {({ selected }) => (
-              <div className="basis-1/3 cursor-pointer">
-                <p
+              <div className="basis-1/2 cursor-pointer">
+                <h1
                   className={
                     (selected
                       ? "bg-charcoal text-misty_blue"
-                      : "bg-blue_gray text-misty_blue") + " text-center py-4"
+                      : "bg-cornflower text-misty_blue") + " text-center py-4 text-2xl"
                   }
                 >
-                  Tab 2
-                </p>
-              </div>
-            )}
-          </Tab>
-          <Tab as={Fragment}>
-            {({ selected }) => (
-              <div className="basis-1/3 cursor-pointer">
-                <p
-                  className={
-                    (selected
-                      ? "bg-charcoal text-misty_blue"
-                      : "bg-blue_gray text-misty_blue") + " text-center py-4"
-                  }
-                >
-                  Tab 3
-                </p>
+                  Active Quests
+                </h1>
               </div>
             )}
           </Tab>
         </Tab.List>
-        <Tab.Panels className="h-max">
-          <Tab.Panel>
-            {rotmgDailyQuests.map((d) => (
-              <div key={d.title}>
-                <h1 className="text-2xl">{d.title}</h1>
+        <Tab.Panels className="flex flex-col h-max bg-light_misty_blue">
+          <Tab.Panel className="flex">
+            {rotmgDailyQuests.map((d, i) => (
+              <div 
+                className={`${i===3 ? 'mx-2' : 'ml-2'} basis-1/4`}
+                key={d.title}
+              >
+                <div>
+                  <h2 className="text-xl text-center py-2 bg-blue_gray text-light_misty_blue mb-2 shadow-lg rounded-b-md">{d.title}</h2>
+                </div>
                 <RadioGroup
                   onChange={(e) => {
                     setCookieQuest(e, Cookies, d.title, setQuests);
@@ -1238,13 +1221,13 @@ export default function Home(props) {
                       value={q}
                       className={
                         `${
-                          quests[d.title]?.includes(q.title) ? 'bg-sky-900 bg-opacity-75 text-white' : 'bg-white'
+                          quests[d.title]?.includes(q.title) ? 'bg-sky-900 bg-opacity-75 text-white' : ''
                         }
-                          relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none`
+                          relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none my-2 bg-misty_blue`
                         }
                     >
                       <div className="flex items-center justify-between w-full">
-                        <div className="flex items-center">
+                        <div className="w-full">
                           <div className="text-sm">
                             <RadioGroup.Label
                               as="p"
@@ -1260,40 +1243,46 @@ export default function Home(props) {
                                 quests[d.title]?.includes(q.title) ? 'text-sky-100' : 'text-gray-500'
                               }`}
                             >
-                              {q.needed.map((n) => {
-                                return [...Array(n.amount)].map((e, i) => {
-                                  return (
-                                    <Image
-                                      key={i}
-                                      height={20}
-                                      width={20}
-                                      src={n.file}
-                                      alt=""
-                                    />
-                                  );
-                                });
-                              })}
-                              {q.rewards.map((n) => {
-                                return [...Array(n.amount)].map((e, i) => {
-                                  return (
-                                    <Image
-                                      key={i}
-                                      height={20}
-                                      width={20}
-                                      src={n.file}
-                                      alt=""
-                                    />
-                                  );
-                                });
-                              })}
+                              <div className="py-2 w-full items-center">
+                                <div className="float-left">
+                                  {q.needed.map((n) => {
+                                    return [...Array(n.amount)].map((e, i) => {
+                                      return (
+                                          <Image
+                                            key={i}
+                                            height={28}
+                                            width={28}
+                                            src={n.file}
+                                            alt=""
+                                          />
+                                      );
+                                    });
+                                  })}
+                                </div>
+                                <div className="float-right">
+                                  {q.rewards.map((n) => {
+                                    return [...Array(n.amount)].map((e, i) => {
+                                      return (
+                                        <Image
+                                          key={i}
+                                          height={28}
+                                          width={28}
+                                          src={n.file}
+                                          alt=""
+                                        />
+                                      );
+                                    });
+                                  })}
+                                {quests[d.title]?.includes(q.title) && (
+                                  <div className="text-white float-right ml-2">
+                                    <CheckIcon className="w-7 h-7" />
+                                  </div>
+                                )}
+                                </div>
+                              </div>
                             </RadioGroup.Description>
                           </div>
                         </div>
-                        {quests[d.title]?.includes(q.title) && (
-                        <div className="flex-shrink-0 text-white">
-                          <CheckIcon className="w-6 h-6" />
-                        </div>
-                      )}
                       </div>
                     </RadioGroup.Option>
                   ))}
@@ -1301,8 +1290,7 @@ export default function Home(props) {
               </div>
             ))}
           </Tab.Panel>
-          <Tab.Panel>Content 2</Tab.Panel>
-          <Tab.Panel>Content 3</Tab.Panel>
+          <Tab.Panel>Coming Soon</Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </div>
@@ -1343,6 +1331,7 @@ function setCookieQuest(e, cookies, title, setQuests) {
         if (dailyQuests[title] === undefined) {
           dailyQuests[title] = [e.title];
           cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+          setQuests(dailyQuests);
         } else if (dailyQuests[title].length <= 2) {
           for (let i = 0; i < dailyQuests[title].length; i++) {
             if (dailyQuests[title][i] === e.title) {
@@ -1365,6 +1354,7 @@ function setCookieQuest(e, cookies, title, setQuests) {
         if (dailyQuests[title] === undefined) {
           dailyQuests[title] = [e.title];
           cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+          setQuests(dailyQuests);
         } else if (dailyQuests[title].length <= 2) {
           for (let i = 0; i < dailyQuests[title].length; i++) {
             if (dailyQuests[title][i] === e.title) {
