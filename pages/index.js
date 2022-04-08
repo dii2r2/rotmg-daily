@@ -5,6 +5,60 @@ import "../styles/Home.module.scss";
 import { Menu } from "@headlessui/react";
 import { Tab } from "@headlessui/react";
 import { RadioGroup } from "@headlessui/react";
+import Cookies from "js-cookie";
+import cookie from "cookie";
+/**Images */
+import snake_pit from "../public/images/snake_pit.png";
+import toxic_sewers from "../public/images/toxic_sewers.png";
+import abyss_of_demons from "../public/images/abyss_of_demons.png";
+import sprite_world from "../public/images/sprite_world.png";
+import undead_lair from "../public/images/undead_lair.png";
+import puppet_theatre from "../public/images/puppet_theatre.png";
+import magic_woods from "../public/images/magic_woods.png";
+import cursed_library from "../public/images/cursed_library.png";
+import speed from "../public/images/speed.png";
+import defense from "../public/images/defense.png";
+import vitality from "../public/images/vitality.png";
+import dexterity from "../public/images/dexterity.png";
+import wisdom from "../public/images/wisdom.png";
+import attack from "../public/images/attack.png";
+import standard_chest from "../public/images/standard_chest.png";
+import ancient_ruins from "../public/images/ancient_ruins.png";
+import haunted_cemetery from "../public/images/haunted_cemetery.png";
+import manor from "../public/images/manor.png";
+import mad_lab from "../public/images/mad_lab.png";
+import mountain_temple from "../public/images/mountain_temple.png";
+import third_dimension from "../public/images/third_dimension.png";
+import cubic_jelly from "../public/images/cubic_jelly.png";
+import effigy from "../public/images/effigy.png";
+import mighty_chest from "../public/images/mighty_chest.png";
+import loot_drop_potion from "../public/images/loot_drop_potion.png";
+import loot_tier_potion from "../public/images/loot_tier_potion.png";
+import deadwater_docks from "../public/images/deadwater_docks.png";
+import woodland_labyrinth from "../public/images/woodland_labyrinth.png";
+import crawling_depths from "../public/images/crawling_depths.png";
+import ocean_trench from "../public/images/ocean_trench.png";
+import parasite_chambers from "../public/images/parasite_chambers.png";
+import davy_jones_locker from "../public/images/davy_jones_locker.png";
+import lair_of_draconis from "../public/images/lair_of_draconis.png";
+import ice_cave from "../public/images/ice_cave.png";
+import tomb_of_the_ancients from "../public/images/tomb_of_the_ancients.png";
+import oryx from "../public/images/oryx.png";
+import janus from "../public/images/janus.png";
+import nest from "../public/images/nest.png";
+import honeyed_epic_chest from "../public/images/honeyed_epic_chest.png";
+import lucky_clover from "../public/images/lucky_clover.png";
+import shatters from "../public/images/shatters.png";
+import royal_epic_chest from "../public/images/royal_epic_chest.png";
+import lost_halls from "../public/images/lost_halls.png";
+import marble_epic_chest from "../public/images/marble_epic_chest.png";
+import cultist_hideout from "../public/images/cultist_hideout.png";
+import cultish_epic_chest from "../public/images/cultish_epic_chest.png";
+import voidd from "../public/images/void.png";
+import voided_epic_chest from "../public/images/voided_epic_chest.png";
+import crystal_cavern from "../public/images/crystal_cavern.png";
+import crystallized_epic_chest from "../public/images/crystallized_epic_chest.png";
+
 const rotmgDailyQuests = [
   {
     title: "Scout Quests",
@@ -13,14 +67,14 @@ const rotmgDailyQuests = [
         title: "Scout the Pit",
         needed: [
           {
-            file: ["snake_pit.png"],
-            amount: [3],
+            file: snake_pit,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["speed.png"],
-            amount: [2],
+            file: speed,
+            amount: 2,
           },
         ],
       },
@@ -28,14 +82,14 @@ const rotmgDailyQuests = [
         title: "Scout the Sewers",
         needed: [
           {
-            file: ["toxic_sewers.png"],
-            amount: [1],
+            file: toxic_sewers,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["defense.png"],
-            amount: [2],
+            file: defense,
+            amount: 2,
           },
         ],
       },
@@ -43,14 +97,14 @@ const rotmgDailyQuests = [
         title: "Scout the Abyss",
         needed: [
           {
-            file: ["abyss_of_demons.png"],
-            amount: [1],
+            file: abyss_of_demons,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["vitality.png"],
-            amount: [2],
+            file: vitality,
+            amount: 2,
           },
         ],
       },
@@ -58,14 +112,14 @@ const rotmgDailyQuests = [
         title: "Scout the Sprites",
         needed: [
           {
-            file: ["sprite_world.png"],
-            amount: [1],
+            file: sprite_world,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["dexterity.png"],
-            amount: [2],
+            file: dexterity,
+            amount: 2,
           },
         ],
       },
@@ -73,14 +127,14 @@ const rotmgDailyQuests = [
         title: "Scout the Lair",
         needed: [
           {
-            file: ["undead_lair.png"],
-            amount: [1],
+            file: undead_lair,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["wisdom.png"],
-            amount: [2],
+            file: wisdom,
+            amount: 2,
           },
         ],
       },
@@ -88,14 +142,14 @@ const rotmgDailyQuests = [
         title: "Scout the Theatre",
         needed: [
           {
-            file: ["puppet_theatre.png"],
-            amount: [1],
+            file: puppet_theatre,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["attack.png"],
-            amount: [2],
+            file: attack,
+            amount: 2,
           },
         ],
       },
@@ -103,18 +157,18 @@ const rotmgDailyQuests = [
         title: "Scout the Woods",
         needed: [
           {
-            file: ["magic_woods.png"],
-            amount: [1],
+            file: magic_woods,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["speed.png"],
-            amount: [1],
+            file: speed,
+            amount: 1,
           },
           {
-            file: ["dexterity.png"],
-            amount: [1],
+            file: dexterity,
+            amount: 1,
           },
         ],
       },
@@ -122,133 +176,18 @@ const rotmgDailyQuests = [
         title: "Scout the Library",
         needed: [
           {
-            file: ["cursed_library.png"],
-            amount: [1],
+            file: cursed_library,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["vitality.png"],
-            amount: [1],
+            file: vitality,
+            amount: 1,
           },
           {
-            file: ["wisdom.png"],
-            amount: [1],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Beginner Quests",
-    quests: [
-      {
-        title: "The Pirate King",
-        needed: [
-          {
-            file: ["pirate_cave.png"],
-            amount: [4],
-          },
-        ],
-        rewards: [
-          {
-            file: ["beginner_chest.png"],
-            amount: [1],
-          },
-        ],
-      },
-      {
-        title: "The Mama",
-        needed: [
-          {
-            file: ["forest_maze.png"],
-            amount: [4],
-          },
-        ],
-        rewards: [
-          {
-            file: ["beginner_chest.png"],
-            amount: [1],
-          },
-        ],
-      },
-      {
-        title: "The Spider Queen",
-        needed: [
-          {
-            file: ["spider_den.png"],
-            amount: [4],
-          },
-        ],
-        rewards: [
-          {
-            file: ["beginner_chest.png"],
-            amount: [1],
-          },
-        ],
-      },
-      {
-        title: "The Masked God",
-        needed: [
-          {
-            file: ["forbidden_jungle.png"],
-            amount: [4],
-          },
-        ],
-        rewards: [
-          {
-            file: ["beginner_chest.png"],
-            amount: [1],
-          },
-        ],
-      },
-      {
-        title: "The Queen Bee",
-        needed: [
-          {
-            file: ["hive.png"],
-            amount: [4],
-          },
-        ],
-        rewards: [
-          {
-            file: ["beginner_chest.png"],
-            amount: [1],
-          },
-        ],
-      },
-      {
-        title: "Run the Table",
-        needed: [
-          {
-            file: ["pirate_cave.png"],
-            amount: [1],
-          },
-          {
-            file: ["forest_maze.png"],
-            amount: [1],
-          },
-          {
-            file: ["spider_den.png"],
-            amount: [1],
-          },
-          {
-            file: ["forbidden_jungle.png"],
-            amount: [1],
-          },
-          {
-            file: ["hive.png"],
-            amount: [1],
-          },
-        ],
-        rewards: [
-          {
-            file: ["beginner_chest.png"],
-            amount: [1],
-          },
-          {
-            file: ["treasure_map.png"],
-            amount: [1],
+            file: wisdom,
+            amount: 1,
           },
         ],
       },
@@ -261,14 +200,14 @@ const rotmgDailyQuests = [
         title: "The Snake Queen",
         needed: [
           {
-            file: ["snake_pit.png"],
-            amount: [8],
+            file: snake_pit,
+            amount: 8,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -276,14 +215,14 @@ const rotmgDailyQuests = [
         title: "The Sprite Goddess",
         needed: [
           {
-            file: ["sprite_world.png"],
-            amount: [8],
+            file: sprite_world,
+            amount: 8,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -291,14 +230,14 @@ const rotmgDailyQuests = [
         title: "The Titan",
         needed: [
           {
-            file: ["ancient_ruins.png"],
-            amount: [6],
+            file: ancient_ruins,
+            amount: 6,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -306,14 +245,14 @@ const rotmgDailyQuests = [
         title: "The Ghost God",
         needed: [
           {
-            file: ["undead_lair.png"],
-            amount: [8],
+            file: undead_lair,
+            amount: 8,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -321,14 +260,14 @@ const rotmgDailyQuests = [
         title: "The Archdemon",
         needed: [
           {
-            file: ["abyss_of_demons.png"],
-            amount: [8],
+            file: abyss_of_demons,
+            amount: 8,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -336,14 +275,14 @@ const rotmgDailyQuests = [
         title: "The Slime God",
         needed: [
           {
-            file: ["toxic_sewers.png"],
-            amount: [6],
+            file: toxic_sewers,
+            amount: 6,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -351,14 +290,14 @@ const rotmgDailyQuests = [
         title: "The Puppet Master",
         needed: [
           {
-            file: ["puppet_theatre.png"],
-            amount: [6],
+            file: puppet_theatre,
+            amount: 6,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -366,14 +305,14 @@ const rotmgDailyQuests = [
         title: "The Fountain Spirit",
         needed: [
           {
-            file: ["magic_woods.png"],
-            amount: [5],
+            file: magic_woods,
+            amount: 5,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -381,14 +320,14 @@ const rotmgDailyQuests = [
         title: "The Archivist",
         needed: [
           {
-            file: ["cursed_library.png"],
-            amount: [5],
+            file: cursed_library,
+            amount: 5,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -396,14 +335,14 @@ const rotmgDailyQuests = [
         title: "The Apparition",
         needed: [
           {
-            file: ["haunted_cemetery.png"],
-            amount: [3],
+            file: haunted_cemetery,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -411,14 +350,14 @@ const rotmgDailyQuests = [
         title: "The Vampire Lord",
         needed: [
           {
-            file: ["manor.png"],
-            amount: [4],
+            file: manor,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -426,14 +365,14 @@ const rotmgDailyQuests = [
         title: "The Mad Scientist",
         needed: [
           {
-            file: ["mad_lab.png"],
-            amount: [4],
+            file: mad_lab,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -441,38 +380,38 @@ const rotmgDailyQuests = [
         title: "To the Mountains!",
         needed: [
           {
-            file: ["undead_lair.png"],
-            amount: [1],
+            file: undead_lair,
+            amount: 1,
           },
           {
-            file: ["sprite_world.png"],
-            amount: [1],
+            file: sprite_world,
+            amount: 1,
           },
           {
-            file: ["toxic_sewers.png"],
-            amount: [1],
+            file: toxic_sewers,
+            amount: 1,
           },
           {
-            file: ["abyss_of_demons.png"],
-            amount: [1],
+            file: abyss_of_demons,
+            amount: 1,
           },
           {
-            file: ["mad_lab.png"],
-            amount: [1],
+            file: mad_lab,
+            amount: 1,
           },
           {
-            file: ["puppet_theatre.png"],
-            amount: [1],
+            file: puppet_theatre,
+            amount: 1,
           },
           {
-            file: ["haunted_cemetery.png"],
-            amount: [1],
+            file: haunted_cemetery,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -480,22 +419,22 @@ const rotmgDailyQuests = [
         title: "Smite the Undead!",
         needed: [
           {
-            file: ["undead_lair.png"],
-            amount: [2],
+            file: undead_lair,
+            amount: 2,
           },
           {
-            file: ["haunted_cemetery.png"],
-            amount: [2],
+            file: haunted_cemetery,
+            amount: 2,
           },
           {
-            file: ["manor.png"],
-            amount: [2],
+            file: manor,
+            amount: 2,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -503,18 +442,18 @@ const rotmgDailyQuests = [
         title: "As Above, So Below",
         needed: [
           {
-            file: ["sprite_world.png"],
-            amount: [3],
+            file: sprite_world,
+            amount: 3,
           },
           {
-            file: ["toxic_sewers.png"],
-            amount: [3],
+            file: toxic_sewers,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -522,18 +461,18 @@ const rotmgDailyQuests = [
         title: "Blessings and Curses",
         needed: [
           {
-            file: ["magic_woods.png"],
-            amount: [3],
+            file: magic_woods,
+            amount: 3,
           },
           {
-            file: ["cursed_library.png"],
-            amount: [3],
+            file: cursed_library,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -541,18 +480,18 @@ const rotmgDailyQuests = [
         title: "Demonhunter",
         needed: [
           {
-            file: ["abyss_of_demons.png"],
-            amount: [3],
+            file: abyss_of_demons,
+            amount: 3,
           },
           {
-            file: ["mountain_temple.png"],
-            amount: [2],
+            file: mountain_temple,
+            amount: 2,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -560,26 +499,26 @@ const rotmgDailyQuests = [
         title: "That's the Spirit",
         needed: [
           {
-            file: ["sprite_world.png"],
-            amount: [1],
+            file: sprite_world,
+            amount: 1,
           },
           {
-            file: ["undead_lair.png"],
-            amount: [1],
+            file: undead_lair,
+            amount: 1,
           },
           {
-            file: ["magic_woods.png"],
-            amount: [1],
+            file: magic_woods,
+            amount: 1,
           },
           {
-            file: ["haunted_cemetery.png"],
-            amount: [1],
+            file: haunted_cemetery,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -587,26 +526,26 @@ const rotmgDailyQuests = [
         title: "Rainbow Road",
         needed: [
           {
-            file: ["sprite_world.png"],
-            amount: [1],
+            file: sprite_world,
+            amount: 1,
           },
           {
-            file: ["undead_lair.png"],
-            amount: [1],
+            file: undead_lair,
+            amount: 1,
           },
           {
-            file: ["toxic_sewers.png"],
-            amount: [1],
+            file: toxic_sewers,
+            amount: 1,
           },
           {
-            file: ["abyss_of_demons.png"],
-            amount: [1],
+            file: abyss_of_demons,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -614,18 +553,18 @@ const rotmgDailyQuests = [
         title: "The Cost of Wisdom",
         needed: [
           {
-            file: ["mad_lab.png"],
-            amount: [2],
+            file: mad_lab,
+            amount: 2,
           },
           {
-            file: ["cursed_library.png"],
-            amount: [2],
+            file: cursed_library,
+            amount: 2,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
         ],
       },
@@ -633,50 +572,50 @@ const rotmgDailyQuests = [
         title: "Dimensional Foes",
         needed: [
           {
-            file: ["sprite_world.png"],
-            amount: [4],
+            file: sprite_world,
+            amount: 4,
           },
           {
-            file: ["third_dimension.png"],
-            amount: [2],
+            file: third_dimension,
+            amount: 2,
           },
         ],
         rewards: [
           {
-            file: ["standard_chest.png"],
-            amount: [1],
+            file: standard_chest,
+            amount: 1,
           },
           {
-            file: ["cubic_jelly.png"],
-            amount: [1],
+            file: cubic_jelly,
+            amount: 1,
           },
         ],
       },
     ],
   },
   {
-    title: "Mighty Quest",
+    title: "Mighty Quests",
     quests: [
       {
         title: "The Effigy",
         needed: [
           {
-            file: ["effigy.png"],
-            amount: [1],
+            file: effigy,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
           {
-            file: ["loot_drop_potion.png"],
-            amount: [1],
+            file: loot_drop_potion,
+            amount: 1,
           },
           {
-            file: ["loot_tier_potion.png"],
-            amount: [1],
+            file: loot_tier_potion,
+            amount: 1,
           },
         ],
       },
@@ -684,14 +623,14 @@ const rotmgDailyQuests = [
         title: "The New King",
         needed: [
           {
-            file: ["deadwater_docks.png"],
-            amount: [4],
+            file: deadwater_docks,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -699,14 +638,14 @@ const rotmgDailyQuests = [
         title: "The Megamoth",
         needed: [
           {
-            file: ["woodland_labyrinth.png"],
-            amount: [4],
+            file: woodland_labyrinth,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -714,14 +653,14 @@ const rotmgDailyQuests = [
         title: "The Prodigal Son",
         needed: [
           {
-            file: ["crawling_depths.png"],
-            amount: [4],
+            file: crawling_depths,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -729,14 +668,14 @@ const rotmgDailyQuests = [
         title: "The Mermaid Goddess",
         needed: [
           {
-            file: ["ocean_trench.png"],
-            amount: [4],
+            file: ocean_trench,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -744,14 +683,14 @@ const rotmgDailyQuests = [
         title: "The Nightmare",
         needed: [
           {
-            file: ["parasite_chambers.png"],
-            amount: [4],
+            file: parasite_chambers,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -759,14 +698,14 @@ const rotmgDailyQuests = [
         title: "The Ghost Pirate",
         needed: [
           {
-            file: ["davy_jones_locker.png"],
-            amount: [4],
+            file: davy_jones_locker,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -774,14 +713,14 @@ const rotmgDailyQuests = [
         title: "The Elemental Wyvern",
         needed: [
           {
-            file: ["lair_of_draconis.png"],
-            amount: [4],
+            file: lair_of_draconis,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -789,14 +728,14 @@ const rotmgDailyQuests = [
         title: "The Fallen",
         needed: [
           {
-            file: ["mountain_temple.png"],
-            amount: [4],
+            file: mountain_temple,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -804,14 +743,14 @@ const rotmgDailyQuests = [
         title: "The Unwilling",
         needed: [
           {
-            file: ["ice_cave.png"],
-            amount: [4],
+            file: ice_cave,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -819,14 +758,14 @@ const rotmgDailyQuests = [
         title: "The Ancients",
         needed: [
           {
-            file: ["tomb_of_the_ancients.png"],
-            amount: [4],
+            file: tomb_of_the_ancients,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -834,14 +773,14 @@ const rotmgDailyQuests = [
         title: "The Goddess",
         needed: [
           {
-            file: ["third_dimension.png"],
-            amount: [4],
+            file: third_dimension,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -849,14 +788,14 @@ const rotmgDailyQuests = [
         title: "The Mad God",
         needed: [
           {
-            file: ["oryx.png"],
-            amount: [4],
+            file: oryx,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -864,14 +803,14 @@ const rotmgDailyQuests = [
         title: "The Doorwarden",
         needed: [
           {
-            file: ["janus.png"],
-            amount: [4],
+            file: janus,
+            amount: 4,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -879,18 +818,18 @@ const rotmgDailyQuests = [
         title: "Double Trouble",
         needed: [
           {
-            file: ["oryx.png"],
-            amount: [3],
+            file: oryx,
+            amount: 3,
           },
           {
-            file: ["janus.png"],
-            amount: [3],
+            file: janus,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -898,22 +837,22 @@ const rotmgDailyQuests = [
         title: "Epic Showdown",
         needed: [
           {
-            file: ["deadwater_docks.png"],
-            amount: [2],
+            file: deadwater_docks,
+            amount: 2,
           },
           {
-            file: ["crawling_depths.png"],
-            amount: [2],
+            file: crawling_depths,
+            amount: 2,
           },
           {
-            file: ["woodland_labyrinth.png"],
-            amount: [2],
+            file: woodland_labyrinth,
+            amount: 2,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -921,22 +860,22 @@ const rotmgDailyQuests = [
         title: "Exterminate!",
         needed: [
           {
-            file: ["crawling_depths.png"],
-            amount: [2],
+            file: crawling_depths,
+            amount: 2,
           },
           {
-            file: ["woodland_labyrinth.png"],
-            amount: [2],
+            file: woodland_labyrinth,
+            amount: 2,
           },
           {
-            file: ["nest.png"],
-            amount: [1],
+            file: nest,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -944,22 +883,22 @@ const rotmgDailyQuests = [
         title: "Unsettling Foes",
         needed: [
           {
-            file: ["parasite_chambers.png"],
-            amount: [2],
+            file: parasite_chambers,
+            amount: 2,
           },
           {
-            file: ["ice_cave.png"],
-            amount: [1],
+            file: ice_cave,
+            amount: 1,
           },
           {
-            file: ["davy_jones_locker.png"],
-            amount: [1],
+            file: davy_jones_locker,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -967,18 +906,18 @@ const rotmgDailyQuests = [
         title: "Long Forgotten",
         needed: [
           {
-            file: ["ice_cave.png"],
-            amount: [2],
+            file: ice_cave,
+            amount: 2,
           },
           {
-            file: ["tomb_of_the_ancients.png"],
-            amount: [2],
+            file: tomb_of_the_ancients,
+            amount: 2,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -986,18 +925,18 @@ const rotmgDailyQuests = [
         title: "Thar be Pirates!",
         needed: [
           {
-            file: ["deadwater_docks.png"],
-            amount: [2],
+            file: deadwater_docks,
+            amount: 2,
           },
           {
-            file: ["davy_jones_locker.png"],
-            amount: [2],
+            file: davy_jones_locker,
+            amount: 2,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -1005,26 +944,26 @@ const rotmgDailyQuests = [
         title: "Lost and Found",
         needed: [
           {
-            file: ["parasite_chambers.png"],
-            amount: [1],
+            file: parasite_chambers,
+            amount: 1,
           },
           {
-            file: ["lair_of_draconis.png"],
-            amount: [1],
+            file: lair_of_draconis,
+            amount: 1,
           },
           {
-            file: ["davy_jones_locker.png"],
-            amount: [1],
+            file: davy_jones_locker,
+            amount: 1,
           },
           {
-            file: ["tomb_of_the_ancients.png"],
-            amount: [1],
+            file: tomb_of_the_ancients,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -1032,22 +971,22 @@ const rotmgDailyQuests = [
         title: "Ocean Man",
         needed: [
           {
-            file: ["ocean_trench.png"],
-            amount: [2],
+            file: ocean_trench,
+            amount: 2,
           },
           {
-            file: ["davy_jones_locker.png"],
-            amount: [1],
+            file: davy_jones_locker,
+            amount: 1,
           },
           {
-            file: ["deadwater_docks.png"],
-            amount: [1],
+            file: deadwater_docks,
+            amount: 1,
           },
         ],
         rewards: [
           {
-            file: ["mighty_chest.png"],
-            amount: [1],
+            file: mighty_chest,
+            amount: 1,
           },
         ],
       },
@@ -1060,18 +999,18 @@ const rotmgDailyQuests = [
         title: "The Killer Queen",
         needed: [
           {
-            file: ["nest.png"],
-            amount: [3],
+            file: nest,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["honeyed_epic_chest.png"],
-            amount: [1],
+            file: honeyed_epic_chest,
+            amount: 1,
           },
           {
-            file: ["lucky_clover.png"],
-            amount: [1],
+            file: lucky_clover,
+            amount: 1,
           },
         ],
       },
@@ -1079,18 +1018,18 @@ const rotmgDailyQuests = [
         title: "The King",
         needed: [
           {
-            file: ["shatters.png"],
-            amount: [3],
+            file: shatters,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["royal_epic_chest.png"],
-            amount: [1],
+            file: royal_epic_chest,
+            amount: 1,
           },
           {
-            file: ["lucky_clover.png"],
-            amount: [1],
+            file: lucky_clover,
+            amount: 1,
           },
         ],
       },
@@ -1098,18 +1037,18 @@ const rotmgDailyQuests = [
         title: "The Colossus",
         needed: [
           {
-            file: ["lost_halls.png"],
-            amount: [3],
+            file: lost_halls,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["marble_epic_chest.png"],
-            amount: [1],
+            file: marble_epic_chest,
+            amount: 1,
           },
           {
-            file: ["lucky_clover.png"],
-            amount: [1],
+            file: lucky_clover,
+            amount: 1,
           },
         ],
       },
@@ -1117,18 +1056,18 @@ const rotmgDailyQuests = [
         title: "The Cultist",
         needed: [
           {
-            file: ["cultist_hideout.png"],
-            amount: [3],
+            file: cultist_hideout,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["cultish_epic_chest.png"],
-            amount: [1],
+            file: cultish_epic_chest,
+            amount: 1,
           },
           {
-            file: ["lucky_clover.png"],
-            amount: [1],
+            file: lucky_clover,
+            amount: 1,
           },
         ],
       },
@@ -1136,18 +1075,18 @@ const rotmgDailyQuests = [
         title: "The End",
         needed: [
           {
-            file: ["void.png"],
-            amount: [3],
+            file: voidd,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["voided_epic_chest.png"],
-            amount: [1],
+            file: voided_epic_chest,
+            amount: 1,
           },
           {
-            file: ["lucky_clover.png"],
-            amount: [1],
+            file: lucky_clover,
+            amount: 1,
           },
         ],
       },
@@ -1155,18 +1094,18 @@ const rotmgDailyQuests = [
         title: "The Crystal",
         needed: [
           {
-            file: ["crystal_cavern.png"],
-            amount: [3],
+            file: crystal_cavern,
+            amount: 3,
           },
         ],
         rewards: [
           {
-            file: ["crystallized_epic_chest.png"],
-            amount: [1],
+            file: crystallized_epic_chest,
+            amount: 1,
           },
           {
-            file: ["lucky_clover.png"],
-            amount: [1],
+            file: lucky_clover,
+            amount: 1,
           },
         ],
       },
@@ -1174,28 +1113,29 @@ const rotmgDailyQuests = [
         title: "Havoc in the Halls",
         needed: [
           {
-            file: ["lost_halls.png"],
-            amount: [2],
+            file: lost_halls,
+            amount: 2,
           },
           {
-            file: ["cultist_hideout.png"],
-            amount: [2],
+            file: cultist_hideout,
+            amount: 2,
           },
         ],
         rewards: [
           {
-            file: ["voided_epic_chest.png"],
-            amount: [1],
+            file: voided_epic_chest,
+            amount: 1,
           },
           {
-            file: ["lucky_clover.png"],
-            amount: [1],
+            file: lucky_clover,
+            amount: 1,
           },
         ],
       },
     ],
   },
 ];
+
 const plans = [
   {
     name: "Startup",
@@ -1216,8 +1156,10 @@ const plans = [
     disk: "1024 GB SSD disk",
   },
 ];
-export default function Home() {
-  const [selected, setSelected] = useState(rotmgDailyQuests[0].quests[0]);
+export default function Home(props) {
+  let c = props.cookies.dailyQuests || "{}"
+  c = JSON.parse(c);
+  const [quests, setQuests] = useState(c);
 
   return (
     <div className="grid grid-cols-1 h-screen bg-light_misty_blue place-content-start">
@@ -1282,99 +1224,82 @@ export default function Home() {
         </Tab.List>
         <Tab.Panels className="h-max">
           <Tab.Panel>
-            <div className="w-full px-4 py-16">
-              <div className="w-full max-w-md mx-auto">
-                <RadioGroup value={selected} onChange={setSelected}>
-                  <RadioGroup.Label className="sr-only">
-                    Server size
-                  </RadioGroup.Label>
-                  <div className="space-y-2">
-                    {rotmgDailyQuests[0].quests.map((q) => (
-                      <RadioGroup.Option
-                        key={q.title}
-                        value={q}
-                        className={({ active, checked }) =>
-                          `${
-                            active
-                              ? "ring-2 ring-offset-2 ring-offset-sky-300 ring-white ring-opacity-60"
-                              : ""
-                          }
-                  ${
-                    checked ? "bg-sky-900 bg-opacity-75 text-white" : "bg-white"
-                  }
-                    relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none`
+            {rotmgDailyQuests.map((d) => (
+              <div key={d.title}>
+                <h1 className="text-2xl">{d.title}</h1>
+                <RadioGroup
+                  onChange={(e) => {
+                    setCookieQuest(e, Cookies, d.title, setQuests);
+                  }}
+                >
+                  {d.quests.map((q) => (
+                    <RadioGroup.Option
+                      key={q.title}
+                      value={q}
+                      className={
+                        `${
+                          quests[d.title]?.includes(q.title) ? 'bg-sky-900 bg-opacity-75 text-white' : 'bg-white'
                         }
-                      >
-                        {({ active, checked }) => (
-                          <>
-                            <div className="flex items-center justify-between w-full">
-                              <div className="flex items-center">
-                                <div className="text-sm">
-                                  <RadioGroup.Label
-                                    as="p"
-                                    className={`font-medium  ${
-                                      checked ? "text-white" : "text-gray-900"
-                                    }`}
-                                  >
-                                    {q.title}
-                                  </RadioGroup.Label>
-                                  <RadioGroup.Description
-                                    as="span"
-                                    className={`inline ${
-                                      checked ? "text-sky-100" : "text-gray-500"
-                                    }`}
-                                  >
-                                    {q.needed.map((n) => {
-                                      return [...Array(n.amount[0])].map(
-                                        (e, i) => {
-                                          return (
-                                            <Image
-                                              key={i}
-                                              height={20}
-                                              width={20}
-                                              src={
-                                                "/../public/images/" + n.file
-                                              }
-                                              alt=""
-                                            />
-                                          );
-                                        }
-                                      );
-                                    })}
-                                    {q.rewards.map((n) => {
-                                      return [...Array(n.amount[0])].map(
-                                        (e, i) => {
-                                          return (
-                                            <Image
-                                              key={i}
-                                              height={20}
-                                              width={20}
-                                              src={
-                                                "/../public/images/" + n.file
-                                              }
-                                              alt=""
-                                            />
-                                          );
-                                        }
-                                      );
-                                    })}
-                                  </RadioGroup.Description>
-                                </div>
-                              </div>
-                              {checked && (
-                                <div className="flex-shrink-0 text-white">
-                                  <CheckIcon className="w-6 h-6" />
-                                </div>
-                              )}
-                            </div>
-                          </>
-                        )}
-                      </RadioGroup.Option>
-                    ))}
-                  </div>
+                          relative rounded-lg shadow-md px-5 py-4 cursor-pointer flex focus:outline-none`
+                        }
+                    >
+                      <div className="flex items-center justify-between w-full">
+                        <div className="flex items-center">
+                          <div className="text-sm">
+                            <RadioGroup.Label
+                              as="p"
+                              className={`font-medium  ${
+                                quests[d.title]?.includes(q.title) ? 'text-white' : 'text-gray-900'
+                              }`}
+                            >
+                              {q.title}
+                            </RadioGroup.Label>
+                            <RadioGroup.Description
+                              as="span"
+                              className={`inline ${
+                                quests[d.title]?.includes(q.title) ? 'text-sky-100' : 'text-gray-500'
+                              }`}
+                            >
+                              {q.needed.map((n) => {
+                                return [...Array(n.amount)].map((e, i) => {
+                                  return (
+                                    <Image
+                                      key={i}
+                                      height={20}
+                                      width={20}
+                                      src={n.file}
+                                      alt=""
+                                    />
+                                  );
+                                });
+                              })}
+                              {q.rewards.map((n) => {
+                                return [...Array(n.amount)].map((e, i) => {
+                                  return (
+                                    <Image
+                                      key={i}
+                                      height={20}
+                                      width={20}
+                                      src={n.file}
+                                      alt=""
+                                    />
+                                  );
+                                });
+                              })}
+                            </RadioGroup.Description>
+                          </div>
+                        </div>
+                        {quests[d.title]?.includes(q.title) && (
+                        <div className="flex-shrink-0 text-white">
+                          <CheckIcon className="w-6 h-6" />
+                        </div>
+                      )}
+                      </div>
+                    </RadioGroup.Option>
+                  ))}
                 </RadioGroup>
               </div>
-            </div>
+            ))}
           </Tab.Panel>
           <Tab.Panel>Content 2</Tab.Panel>
           <Tab.Panel>Content 3</Tab.Panel>
@@ -1397,4 +1322,81 @@ function CheckIcon(props) {
       />
     </svg>
   );
+}
+
+function setCookieQuest(e, cookies, title, setQuests) {
+  let dailyQuests = cookies.get("dailyQuests");
+  if (dailyQuests === undefined) {
+    dailyQuests = {};
+    dailyQuests[title] = [e.title];
+    cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+    setQuests(dailyQuests);
+  } else {
+    dailyQuests = JSON.parse(dailyQuests);
+    switch (title) {
+      case "Scout Quests":
+        dailyQuests[title] = [e.title];
+        cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+        setQuests(dailyQuests);
+        break;
+      case "Standard Quests":
+        if (dailyQuests[title] === undefined) {
+          dailyQuests[title] = [e.title];
+          cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+        } else if (dailyQuests[title].length <= 2) {
+          for (let i = 0; i < dailyQuests[title].length; i++) {
+            if (dailyQuests[title][i] === e.title) {
+              dailyQuests[title].splice(i, 1);
+              cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+              setQuests(dailyQuests);
+              return;
+            }
+          }
+          if (dailyQuests[title].length === 2) {
+            dailyQuests[title].shift();
+          }
+          dailyQuests[title].push(e.title);
+          cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+          setQuests(dailyQuests);
+          return;
+        }
+        break;
+      case "Mighty Quests":
+        if (dailyQuests[title] === undefined) {
+          dailyQuests[title] = [e.title];
+          cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+        } else if (dailyQuests[title].length <= 2) {
+          for (let i = 0; i < dailyQuests[title].length; i++) {
+            if (dailyQuests[title][i] === e.title) {
+              dailyQuests[title].splice(i, 1);
+              cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+              setQuests(dailyQuests);
+              return;
+            }
+          }
+          if (dailyQuests[title].length === 2) {
+            dailyQuests[title].shift();
+          }
+          dailyQuests[title].push(e.title);
+          cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+          setQuests(dailyQuests);
+          return;
+        }
+        break;
+      case "Epic Quests":
+        dailyQuests[title] = [e.title];
+        cookies.set("dailyQuests", JSON.stringify(dailyQuests));
+        setQuests(dailyQuests);
+        break;
+    }
+  }
+}
+
+export function getServerSideProps({ req, res }) {
+  let cookies = cookie.parse(req.headers.cookie || "");
+  return {
+    props: {
+      cookies,
+    },
+  };
 }
