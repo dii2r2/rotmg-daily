@@ -2,7 +2,6 @@ import { useState, Fragment } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import "../styles/Home.module.scss";
-import { Menu } from "@headlessui/react";
 import { Tab } from "@headlessui/react";
 import { RadioGroup } from "@headlessui/react";
 import Cookies from "js-cookie";
@@ -1136,26 +1135,6 @@ const rotmgDailyQuests = [
   },
 ];
 
-const plans = [
-  {
-    name: "Startup",
-    ram: "12GB",
-    cpus: "6 CPUs",
-    disk: "160 GB SSD disk",
-  },
-  {
-    name: "Business",
-    ram: "16GB",
-    cpus: "8 CPUs",
-    disk: "512 GB SSD disk",
-  },
-  {
-    name: "Enterprise",
-    ram: "32GB",
-    cpus: "12 CPUs",
-    disk: "1024 GB SSD disk",
-  },
-];
 export default function Home(props) {
   let c = props.cookies.dailyQuests || "{}";
   c = JSON.parse(c);
