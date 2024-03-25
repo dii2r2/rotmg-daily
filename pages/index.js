@@ -57,6 +57,15 @@ import voidd from "../public/images/void.png";
 import voided_epic_chest from "../public/images/voided_epic_chest.png";
 import crystal_cavern from "../public/images/crystal_cavern.png";
 import crystallized_epic_chest from "../public/images/crystallized_epic_chest.png";
+import heart_of_the_wetlands from "../public/images/heart_of_the_wetlands.png";
+import speed_sprout from "../public/images/speed_sprout.png";
+import tavern from "../public/images/tavern.png";
+import advanced_kogbold_steamworks from "../public/images/advanced_kogbold_steamworks.png";
+import advanced_nest from "../public/images/advanced_nest.png";
+import kogbold_steamworks from "../public/images/kogbold_steamworks.png";
+import moonlight_village from "../public/images/moonlight_village.png";
+import moonlight_village_chest from "../public/images/moonlight_village_chest.png";
+import kogbold_steamworks_chest from "../public/images/kogbold_steamworks_chest.png";
 
 const rotmgDailyQuests = [
   {
@@ -967,6 +976,63 @@ const rotmgDailyQuests = [
         ],
       },
       {
+        title: "The Cursed Heart",
+        needed: [
+			{
+				file: heart_of_the_wetlands,
+				amount: 4,
+			  },
+        ],
+        rewards: [
+          {
+            file: mighty_chest,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "Pub Crawl",
+        needed: [
+			{
+				file: tavern,
+				amount: 4,
+			  },
+        ],
+        rewards: [
+          {
+            file: mighty_chest,
+            amount: 1,
+          },
+        ],
+      },
+	  {
+        title: "Arboreal Adventure",
+        needed: [
+			{
+				file: heart_of_the_wetlands,
+				amount: 1,
+			  },
+			  {
+				file: magic_woods,
+				amount: 1,
+			  },
+			  {
+				file: woodland_labyrinth,
+				amount: 1,
+			  },
+        ],
+        rewards: [
+          {
+            file: mighty_chest,
+            amount: 1,
+          },
+          {
+            file: speed_sprout,
+            amount: 1,
+          },
+        ],
+      },
+      {
         title: "The Effigy",
         needed: [
           {
@@ -1123,6 +1189,82 @@ const rotmgDailyQuests = [
         rewards: [
           {
             file: honeyed_epic_chest,
+            amount: 1,
+          },
+          {
+            file: lucky_clover,
+            amount: 1,
+          },
+        ],
+      },
+	  {
+        title: "Advanced Nest",
+        needed: [
+          {
+            file: advanced_nest,
+            amount: 4,
+          },
+        ],
+        rewards: [
+          {
+            file: honeyed_epic_chest,
+            amount: 2,
+          },
+          {
+            file: lucky_clover,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "Kogboldian Treasure",
+        needed: [
+          {
+            file: kogbold_steamworks,
+            amount: 3,
+          },
+        ],
+        rewards: [
+          {
+            file: kogbold_steamworks_chest,
+            amount: 1,
+          },
+          {
+            file: lucky_clover,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "Advanced Kogbold Steamworks",
+        needed: [
+          {
+            file: advanced_kogbold_steamworks,
+            amount: 3,
+          },
+        ],
+        rewards: [
+          {
+            file: kogbold_steamworks_chest,
+            amount: 2,
+          },
+          {
+            file: lucky_clover,
+            amount: 1,
+          },
+        ],
+      },
+      {
+        title: "Moonlight Festival",
+        needed: [
+          {
+            file: moonlight_village,
+            amount: 3,
+          },
+        ],
+        rewards: [
+          {
+            file: moonlight_village_chest,
             amount: 1,
           },
           {

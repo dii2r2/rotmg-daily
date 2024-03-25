@@ -1,0 +1,93 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "Rotmg Daily Dev Env",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "rotmg-daily-webserver",
+    "workspaceFolder": "/app",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"cweijan.dbclient-jdbc",
+				"formulahendry.auto-close-tag",
+				"formulahendry.auto-complete-tag",
+				"steoates.autoimport",
+				"formulahendry.auto-rename-tag",
+				"aaron-bond.better-comments",
+				"markis.code-coverage",
+				"streetsidesoftware.code-spell-checker",
+				"naumovs.color-highlight",
+				"yamajyn.commandlist",
+				"mikestead.dotenv",
+				"usernamehw.errorlens",
+				"dbaeumer.vscode-eslint",
+				"figma.figma-vscode-extension",
+				"mkxml.vscode-filesize",
+				"waderyan.gitblame",
+				"donjayamanne.git-extension-pack",
+				"mhutchie.git-graph",
+				"donjayamanne.githistory",
+				"github.vscode-github-actions",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"GitHub.copilot-labs",
+				"GitHub.vscode-pull-request-github",
+				"codezombiech.gitignore",
+				"ecmel.vscode-html-css",
+				"lokalise.i18n-ally",
+				"af4jm.vscode-icalendar",
+				"antfu.iconify",
+				"wix.vscode-import-cost",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"VisualStudioExptTeam.intellicode-api-usage-examples",
+				"xabikos.JavaScriptSnippets",
+				"Tyriar.lorem-ipsum",
+				"yzhang.markdown-all-in-one",
+				"DavidAnson.vscode-markdownlint",
+				"PKief.material-icon-theme",
+				"cweijan.vscode-mysql-client2",
+				"Cardinal90.multi-cursor-case-preserve",
+				"PulkitGangwar.nextjs-snippets",
+				"monokai.theme-monokai-pro-vscode",
+				"leizongmin.node-module-intellisense",
+				"christian-kohler.npm-intellisense",
+				"IBM.output-colorizer",
+				"christian-kohler.path-intellisense",
+				"ms-playwright.playwright",
+				"streetsidesoftware.code-spell-checker-portuguese",
+				"Postman.postman-for-vscode",
+				"esbenp.prettier-vscode",
+				"mohsen1.prettify-json",
+				"mutantdino.resourcemonitor",
+				"syler.sass-indented",
+				"sibiraj-s.vscode-scss-formatter",
+				"mrmlnc.vscode-scss",
+				"snyk-security.snyk-vulnerability-scanner",
+				"stripe.vscode-stripe",
+				"bradlc.vscode-tailwindcss",
+				"Gruntfuggly.todo-tree",
+				"Tyriar.sort-lines",
+				"uctakeoff.vscode-counter",
+				"redhat.vscode-yaml",
+				"stateful.runme"
+			]
+		}
+	}
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
